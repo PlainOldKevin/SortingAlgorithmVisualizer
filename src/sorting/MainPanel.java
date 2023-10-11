@@ -1,6 +1,6 @@
 package sorting;
 import javax.swing.*;
 
-public class main {
+public class MainPanel extends JPanel {
 
 }
