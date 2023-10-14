@@ -8,8 +8,9 @@ public class App extends JFrame {
 		super("Sorting Algorithm Visualizer");
 		this.setSize(950, 700);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
 		
-		// add mainpanel
+		// add main panel
 		this.add(new MainPanel());
 		
 		// make visible
