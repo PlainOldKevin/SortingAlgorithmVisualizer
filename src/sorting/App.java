@@ -9,9 +9,11 @@ public class App extends JFrame {
 		this.setSize(850, 600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		this.setResizable(false);
+		this.getContentPane().setLayout(null);
 		
 		// add main panel
-		this.add(new MainPanel());
+		this.add(new ButtonPanel());
 		
 		// make visible
 		this.setVisible(true);
