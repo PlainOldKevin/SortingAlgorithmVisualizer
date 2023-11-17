@@ -10,21 +10,22 @@ import java.awt.Color;
 public class ButtonPanel extends JPanel {
 	
 	public ButtonPanel() {
+		// SET CHARACTERISTICS OF BUTTON PANEL
+		this.setBounds(0,0,900,75); // SET SIZE OF BUTTON PANEL
+		this.setBackground(Color.DARK_GRAY); // SET BACKGROUND COLOR OF BUTTON PANEL
 		
-		this.setBounds(0,0,900,75);
-		this.setBackground(Color.BLACK);
-		// instantiate start button
-		JButton start = new JButton("Start");
-		start.setBounds(650,10,90,30);
+		// START BUTTON
+		JButton start = new JButton("Start"); // CREATE BUTTON AND GIVE IT TEXT
+		start.setBounds(550,10,90,30);	// SET LOCATION OF THE BUTTON
 		
-		// instantiate drop-down menu
-		String[] algorithms = {"Select", "Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort", "Quick Sort"};
-		JComboBox<String> dropDown = new JComboBox<String>(algorithms);
+		// DROP-DOWN MENU
+		String[] algorithms = {"Select", "Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort", "Quick Sort"}; // ARRAY FOR DROP-DOWN MENU TEXT
+		JComboBox<String> dropDown = new JComboBox<String>(algorithms); // DROP-DOWN MENU CREATION
+		dropDown.setBounds(650,10,120,30); // DROP-DOWN MENU LOCATION
 		
-		
-		this.add(start);
-		this.setLayout(null);
-		//this.add(dropDown);
+		this.setLayout(null); // LAYOUT TO NULL TO PUT THINGS IN CERTAIN SPOTS
+		this.add(start); // ADD START BUTTON TO BUTTON PANEL
+		this.add(dropDown); // ADD DROP-DOWN MENU TO BUTTON PANEL
 	}
 
 }

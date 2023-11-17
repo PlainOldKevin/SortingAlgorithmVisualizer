@@ -4,22 +4,22 @@ import javax.swing.*;
 public class App extends JFrame {
 	
 	public App() {
-		// set basic attributes
-		super("Sorting Algorithm Visualizer");
-		this.setSize(850, 600);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);
-		this.setResizable(false);
-		this.getContentPane().setLayout(null);
+		// APP ATTRIBUTES
+		super("Sorting Algorithm Visualizer"); // WINDOW TAB TEXT
+		this.setSize(850, 600); // WINDOW SIZE
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // HIT 'X' TO CLOSE
+		this.setLocationRelativeTo(null); // CENTER ON SCREEN
+		this.setResizable(false); // CANNOT RESIZE THE WINDOW
+		this.getContentPane().setLayout(null); // LAYOUT OF THE SCREEN (TO EASIER ADD ELEMENTS IN SPECIFIC SPOTS)
 		
-		// add main panel
-		this.add(new ButtonPanel());
+		// ADDING PANELS
+		this.add(new ButtonPanel()); // BUTTON PANEL
 		
-		// make visible
-		this.setVisible(true);
+		// LAST STEP
+		this.setVisible(true); // MAKE WINDOW VISIBLE ON SCREEN
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { // MAIN METHOD
 		new App();
 	}
 }
