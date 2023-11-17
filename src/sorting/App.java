@@ -6,7 +6,7 @@ public class App extends JFrame {
 	public App() {
 		// set basic attributes
 		super("Sorting Algorithm Visualizer");
-		this.setSize(950, 700);
+		this.setSize(850, 600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		
