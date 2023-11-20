@@ -9,8 +9,11 @@ import java.awt.Color;
 // The JPanel with instructions for how and when the array will sort and re-shuffle
 public class ButtonPanel extends JPanel {
 	
+	// ATTRIBUTES
+	SortingPanel sp;
+	
 	// ButtonPanel constructor
-	public ButtonPanel() {
+	public ButtonPanel(SortingPanel sp) {
 		// SET CHARACTERISTICS OF BUTTON PANEL
 		this.setBounds(0,0,850,50); // SET SIZE OF BUTTON PANEL
 		this.setBackground(new Color(27,26,26)); // SET BACKGROUND COLOR OF BUTTON PANEL
@@ -31,10 +34,24 @@ public class ButtonPanel extends JPanel {
 		dropDown.setBounds(720,10,100,25); // DROP-DOWN MENU LOCATION
 		dropDown.setBackground(Color.WHITE); // SET BACKGROUND COLOR
 		
+		// ADD ACTION LISTENERS
+		start.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO start sorting array, repaint
+				
+			}			
+		});
+		
+		// TODO add action listeners for shuffle and combo box
+		
+		// ADD TO PANEL
 		this.setLayout(null); // LAYOUT TO NULL TO PUT THINGS IN CERTAIN SPOTS
 		this.add(start); // ADD START BUTTON TO BUTTON PANEL
 		this.add(shuffle); // ADD SHUFFLE BUTTON TO BUTTON PANEL
 		this.add(dropDown); // ADD DROP-DOWN MENU TO BUTTON PANEL
 	}
+	
+	
 
 }

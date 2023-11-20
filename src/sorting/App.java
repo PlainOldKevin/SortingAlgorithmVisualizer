@@ -11,9 +11,10 @@ public class App extends JFrame {
 		this.setLocationRelativeTo(null); // CENTER ON SCREEN
 		this.setResizable(false); // CANNOT RESIZE THE WINDOW
 		this.getContentPane().setLayout(null); // LAYOUT OF THE SCREEN (TO EASIER ADD ELEMENTS IN SPECIFIC SPOTS)
+		// TODO add instances of button and sorting panel
 		
 		// ADDING PANELS
-		this.add(new ButtonPanel()); // BUTTON PANEL
+		this.add(new ButtonPanel(null)); // BUTTON PANEL
 		
 		// LAST STEP
 		this.setVisible(true); // MAKE WINDOW VISIBLE ON SCREEN

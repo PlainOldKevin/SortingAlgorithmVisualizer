@@ -9,4 +9,8 @@ import java.awt.Color;
 // The JPanel for displaying the array
 public class SortingPanel {
 
+	// SortingPanel constructor
+	public SortingPanel() {
+		
+	}
 }
