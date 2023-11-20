@@ -35,6 +35,8 @@ public class ButtonPanel extends JPanel {
 		dropDown.setBackground(Color.WHITE); // SET BACKGROUND COLOR
 		
 		// ADD ACTION LISTENERS
+		
+		// START BUTTON ACTION LISTENER
 		start.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -43,7 +45,25 @@ public class ButtonPanel extends JPanel {
 			}			
 		});
 		
-		// TODO add action listeners for shuffle and combo box
+		// SHUFFLE BUTTON ACTION LISTENER
+		shuffle.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO shuffle array instantly
+				
+			}
+			
+		});
+		
+		// COMBO BOX ITEM LISTENER
+		dropDown.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				// TODO select algorithm in the combo box
+				
+			}
+			
+		});
 		
 		// ADD TO PANEL
 		this.setLayout(null); // LAYOUT TO NULL TO PUT THINGS IN CERTAIN SPOTS
