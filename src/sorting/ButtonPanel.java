@@ -9,6 +9,7 @@ import java.awt.Color;
 // The JPanel with instructions for how and when the array will sort and re-shuffle
 public class ButtonPanel extends JPanel {
 	
+	// ButtonPanel constructor
 	public ButtonPanel() {
 		// SET CHARACTERISTICS OF BUTTON PANEL
 		this.setBounds(0,0,850,50); // SET SIZE OF BUTTON PANEL
@@ -25,7 +26,7 @@ public class ButtonPanel extends JPanel {
 		shuffle.setBackground(Color.WHITE); // SET BACKGROUND COLOR
 		
 		// DROP-DOWN MENU
-		String[] algorithms = {"Select", "Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort", "Quick Sort"}; // ARRAY FOR DROP-DOWN MENU TEXT
+		String[] algorithms = {"Bubble Sort", "Insertion Sort", "Selection Sort", "Merge Sort", "Quick Sort"}; // ARRAY FOR DROP-DOWN MENU TEXT
 		JComboBox<String> dropDown = new JComboBox<String>(algorithms); // DROP-DOWN MENU CREATION
 		dropDown.setBounds(720,10,100,25); // DROP-DOWN MENU LOCATION
 		dropDown.setBackground(Color.WHITE); // SET BACKGROUND COLOR
