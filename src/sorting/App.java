@@ -6,7 +6,7 @@ public class App extends JFrame {
 	public App() {
 		// APP ATTRIBUTES
 		super("Sorting Algorithm Visualizer"); // WINDOW TAB TEXT
-		this.setSize(850, 600); // WINDOW SIZE
+		this.setSize(860, 600); // WINDOW SIZE
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // HIT 'X' TO CLOSE
 		this.setLocationRelativeTo(null); // CENTER ON SCREEN
 		this.setResizable(false); // CANNOT RESIZE THE WINDOW

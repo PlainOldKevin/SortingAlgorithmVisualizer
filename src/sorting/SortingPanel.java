@@ -16,18 +16,18 @@ public class SortingPanel extends JPanel {
 	private Random random;
 	
 	// GRAPH ATTRIBUTES
-	private final int SIZE = 500;
+	private final int SIZE = 525;
 	private int current = -1;
 	private int check = -1;
-	private int width = SIZE/len;
+	private int width = 17;
 	private int type = 0;
 	
 	
 	// SortingPanel constructor
 	public SortingPanel() {
 		// SET CHARACTERISTICS OF PANEL
-		this.setBounds(0, 50, 850, 530); // SET SIZE OF PANEL
-		this.setBackground(new Color(22,23,25)); // SET BACKGROUND COLOR OF PANEL
+		this.setBounds(0, 50, 860, 525); // SET SIZE OF PANEL
+		this.setBackground(new Color(47,47,47)); // SET BACKGROUND COLOR OF PANEL
 		
 		list = new int[len];
 		
@@ -41,7 +41,7 @@ public class SortingPanel extends JPanel {
 	// METHOD TO CREATE THE ARRAY USED FOR VISUALIZATION
 	public void fillList() {
 		for(int i = 0; i < len; i++) {	// FILLS THE LIST FROM 1 -> LEN
-			list[i] = i + 2;
+			list[i] = i + 1;
 		}
 	}
 	
@@ -49,7 +49,7 @@ public class SortingPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for(int i = 0; i < len; i++) {	//RUNS TROUGH EACH ELEMENT OF THE LIST
-			int HEIGHT = list[i]*width;	//SETS THE HEIGHT OF THE ELEMENT ON THE GRAPH
+			int HEIGHT = list[i]*width/2;	//SETS THE HEIGHT OF THE ELEMENT ON THE GRAPH
 			g.setColor(Color.white);	//DEFAULT COLOR
 		
 			// DRAWS THE BAR AND THE BLACK OUTLINE

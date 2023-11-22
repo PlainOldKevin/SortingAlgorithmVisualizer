@@ -15,8 +15,8 @@ public class ButtonPanel extends JPanel {
 	// ButtonPanel constructor
 	public ButtonPanel(SortingPanel sp) {
 		// SET CHARACTERISTICS OF BUTTON PANEL
-		this.setBounds(0,0,850,50); // SET SIZE OF BUTTON PANEL
-		this.setBackground(new Color(21,23,25)); // SET BACKGROUND COLOR OF BUTTON PANEL
+		this.setBounds(0,0,860,50); // SET SIZE OF BUTTON PANEL
+		this.setBackground(new Color(42,43,46)); // SET BACKGROUND COLOR OF BUTTON PANEL
 		
 		// START BUTTON
 		JButton start = new JButton("Start"); // CREATE BUTTON AND GIVE IT TEXT
