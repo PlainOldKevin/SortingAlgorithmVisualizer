@@ -49,8 +49,7 @@ public class ButtonPanel extends JPanel {
 		shuffle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO shuffle array instantly
-				
+				sp.shuffleList(sp.getList()); // SHUFFLE METHOD
 			}
 			
 		});
