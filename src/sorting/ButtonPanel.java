@@ -11,6 +11,7 @@ public class ButtonPanel extends JPanel {
 	
 	// ATTRIBUTES
 	SortingPanel sp;
+	private int chosenAlg = 0;
 	
 	// ButtonPanel constructor
 	public ButtonPanel(SortingPanel sp) {
@@ -58,8 +59,7 @@ public class ButtonPanel extends JPanel {
 		dropDown.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO select algorithm in the combo box
-				
+				chosenAlg = dropDown.getSelectedIndex(); // RETURN THE USER'S SELECTED ALGORITHM IN THE DROP-DOWN 
 			}
 			
 		});
