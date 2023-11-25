@@ -62,16 +62,6 @@ public class SortingPanel extends JPanel {
 		return array;
 	}
 	
-	// METHOD TO CHECK IF THE ARRAY IS SORTED
-	public boolean isSorted(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) { // GO THRU ARRAY
-            if (array[i] > array[i + 1]) { // CHECK INDEX VALUES NEXT TO EACH OTHER
-                return false; 
-            }
-        }
-        return true;
-    }
-	
 	// METHOD TO PAINT AND VISUALIZE THE GRAPH
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

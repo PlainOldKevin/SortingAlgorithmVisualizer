@@ -12,7 +12,8 @@ public class App extends JFrame {
 		this.setResizable(false); // CANNOT RESIZE THE WINDOW
 		this.getContentPane().setLayout(null); // LAYOUT OF THE SCREEN (TO EASIER ADD ELEMENTS IN SPECIFIC SPOTS)
 		SortingPanel sp = new SortingPanel(); // SORTING PANEL
-		ButtonPanel bp = new ButtonPanel(sp); // BUTTON PANEL
+		SortingAlgorithms sort = new SortingAlgorithms(); // SORTING ALGORITHMS
+		ButtonPanel bp = new ButtonPanel(sp, sort); // BUTTON PANEL
 		
 		// ADDING PANELS
 		this.add(bp);

@@ -15,7 +15,7 @@ public class ButtonPanel extends JPanel {
 	private int chosenAlg = 0;
 	
 	// ButtonPanel constructor
-	public ButtonPanel(SortingPanel sp) {
+	public ButtonPanel(SortingPanel sp, SortingAlgorithms sort) {
 		// SET CHARACTERISTICS OF BUTTON PANEL
 		this.setBounds(0,0,860,50); // SET SIZE OF BUTTON PANEL
 		this.setBackground(new Color(42,43,46)); // SET BACKGROUND COLOR OF BUTTON PANEL
@@ -45,7 +45,7 @@ public class ButtonPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				switch(chosenAlg) {
 					case 0:
-						// bubble
+						sort.BubbleSort(sp.getArray(), sp);
 				}
 				
 			}			
