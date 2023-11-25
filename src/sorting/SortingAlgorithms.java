@@ -17,23 +17,27 @@ public class SortingAlgorithms {
 	private int current = -1;
 	private int check = -1;
 	private int len = 50;
-	private boolean isSorted = false;
 	
 	// BUBBLE SORT ALGORITHM
 	public void BubbleSort(int[] array, SortingPanel sp) {
-		for (int i = 0; i < len - 1; i++) { // GO THRU ARRAY
-			current = i;
-			check = i + 1;
-			if (array[current] > array[check]) {
-				int temp = array[current];
-				array[current] = array[check];
-				array[check] = temp;
+		boolean swapped = true;
+		while (swapped) {
+			swapped = false;
+			for (int i = 0; i < len - 1; i++) { // GO THRU ARRAY
+				current = i;
+				check = i + 1;
+				if (array[current] > array[check]) {
+					int temp = array[current];
+					array[current] = array[check];
+					array[check] = temp;
+				}
+				swapped = true;
+				sleep();
+				sp.paintImmediately(0, 50, 860, 525);
 			}
-			sleep();
-			sp.paintImmediately(0, 50, 860, 525);
+			if (isSorted(array)) swapped = false;
+			reset();	
 		}
-		isSorted(array);
-		reset();
 	}
 	
 	
@@ -42,20 +46,10 @@ public class SortingAlgorithms {
 	public boolean isSorted(int[] array) {
 	    for (int i = 0; i < array.length - 1; i++) { // GO THRU ARRAY
 	        if (array[i] > array[i + 1]) { // CHECK INDEX VALUES NEXT TO EACH OTHER
-	        	isSorted = false;
 	            return false; 
 	        }
 	    }
-	    isSorted = true;
 	    return true;
-	}
-	
-	
-	// METHOD FOR SIMPLE SWAPPING OF INDEXES
-	public void swap(int i, int j) {
-		int temp = i;
-		i = j;
-		j = temp;
 	}
 	
 	// METHOD TO RESET ATTRIBUTES FOR CONTINUED SORTING
@@ -77,7 +71,7 @@ public class SortingAlgorithms {
 	// METHOD INSERTED INTO SORTING ALGORITHMS TO DELAY THE SORTING, THUS HIGHLIGHTING THE SORTING PROCESS FOR THE USER
 	public void sleep() {
 		try {
-			Thread.sleep(30);
+			Thread.sleep(3);
 		} catch(Exception e) {
 			
 		}
