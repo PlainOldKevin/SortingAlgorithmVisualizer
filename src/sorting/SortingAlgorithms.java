@@ -10,9 +10,6 @@ import java.awt.Color;
 // This class will store all of the sorting algorithms used to visually sort the array in the SortingPanel
 public class SortingAlgorithms {
 	
-	// ATTRIBUTES FOR GRAPH VISUALIZATION
-	SortingPanel sp;
-	
 	// ATTRIBUTES FOR ARRAY COMPARISON
 	private int current = -1;
 	private int check = -1;
@@ -20,10 +17,11 @@ public class SortingAlgorithms {
 	
 	// BUBBLE SORT ALGORITHM
 	public void BubbleSort(int[] array, SortingPanel sp) {
+		int alreadySorted = 1;
 		boolean swapped = true;
 		while (swapped) {
 			swapped = false;
-			for (int i = 0; i < len - 1; i++) { // GO THRU ARRAY
+			for (int i = 0; i < len - alreadySorted; i++) { // GO THRU ARRAY
 				current = i;
 				check = i + 1;
 				if (array[current] > array[check]) {
@@ -32,12 +30,14 @@ public class SortingAlgorithms {
 					array[check] = temp;
 				}
 				swapped = true;
-				sleep();
 				sp.paintImmediately(0, 50, 860, 525);
+				sleep();
 			}
+			alreadySorted++;
 			if (isSorted(array)) swapped = false;	
 		}
 		reset();
+		sp.repaint();
 	}
 	
 	
@@ -58,20 +58,20 @@ public class SortingAlgorithms {
 		check = -1;
 	}
 	
-	// METHOD TO SEND SortingPanel THE CHECK ATTRIBUTE
+	// CHECK GETTER
 	public int getCheck() {
 		return check;
 	}
 	
-	// METHOD TO SEND SortingPanel THE CURRENT ATTRIBUTE
-		public int getCurrent() {
-			return current;
-		}
+	// CURRENT GETTER
+	public int getCurrent() {
+		return current;
+	}
 	
 	// METHOD INSERTED INTO SORTING ALGORITHMS TO DELAY THE SORTING, THUS HIGHLIGHTING THE SORTING PROCESS FOR THE USER
 	public void sleep() {
 		try {
-			Thread.sleep(3);
+			Thread.sleep(25);
 		} catch(Exception e) {
 			
 		}

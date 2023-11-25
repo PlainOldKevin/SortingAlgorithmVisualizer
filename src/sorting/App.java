@@ -13,6 +13,7 @@ public class App extends JFrame {
 		this.getContentPane().setLayout(null); // LAYOUT OF THE SCREEN (TO EASIER ADD ELEMENTS IN SPECIFIC SPOTS)
 		SortingAlgorithms sort = new SortingAlgorithms(); // SORTING ALGORITHMS
 		SortingPanel sp = new SortingPanel(); // SORTING PANEL
+		sp.setSort(sort);
 		ButtonPanel bp = new ButtonPanel(sp, sort); // BUTTON PANEL
 		
 		// ADDING PANELS

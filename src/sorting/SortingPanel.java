@@ -16,11 +16,11 @@ public class SortingPanel extends JPanel {
 	// ATTRIBUTES OF CLASS
 	private int len = 50;
 	private int[] array;
-	SortingAlgorithms sort;
 	
 	// GRAPH ATTRIBUTES
 	private final int SIZE = 525;
 	private int width = 17;
+	private SortingAlgorithms sort;
 	
 	
 	// SortingPanel constructor
@@ -31,6 +31,7 @@ public class SortingPanel extends JPanel {
 		
 		// SOME CLASS CREATION ATTRIBUTES
 		array = new int[len]; // ARRAY INSTANTIATION
+		
 		
 		fillArray(); // CREATE ARRAY
 		repaint(); // DISPLAY ARRAY
@@ -63,6 +64,15 @@ public class SortingPanel extends JPanel {
 		return array;
 	}
 	
+	// METHOD TO TAKE IN AND SET SortingAlgorithms ATTRIBUTE
+	public void setSort(SortingAlgorithms x) {
+		this.sort = x;
+	}
+	
+	public SortingAlgorithms getSort() {
+		return this.sort;
+	}
+	
 	// METHOD TO PAINT AND VISUALIZE THE GRAPH
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -71,9 +81,22 @@ public class SortingPanel extends JPanel {
 			
 			// DRAWS THE BAR AND THE BLACK OUTLINE
 			g.setColor(Color.white);	// GRAPH FILL COLOR
-			g.fillRect(i*width, SIZE-HEIGHT, width, HEIGHT);
+			
+			if(sort == null) {
+		          throw new RuntimeException("Board not set") ;
+		       }
+			
+			if(sort.getCurrent() > -1 && i == sort.getCurrent()) {
+				g.setColor(Color.green);	//COLOR OF CURRENT
+				System.out.println(sort.getCurrent());
+			}
+			if(sort.getCheck() > -1 && i == sort.getCheck()) {
+				g.setColor(Color.red);	//COLOR OF CHECKING
+			}
+			
+			g.fillRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL RECTANGLES
 			g.setColor(Color.black);	// GRAPH OUTLINE COLOR
-			g.drawRect(i*width, SIZE-HEIGHT, width, HEIGHT);
+			g.drawRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL OUTLINE
 		}
 	}
 }
