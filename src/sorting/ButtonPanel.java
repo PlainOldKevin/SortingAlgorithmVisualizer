@@ -11,6 +11,7 @@ public class ButtonPanel extends JPanel {
 	
 	// ATTRIBUTES
 	SortingPanel sp;
+	SortingAlgorithms sort;
 	private int chosenAlg = 0;
 	
 	// ButtonPanel constructor
@@ -40,8 +41,12 @@ public class ButtonPanel extends JPanel {
 		// START BUTTON ACTION LISTENER
 		start.addActionListener(new ActionListener() {
 			@Override
+			// TODO create and perfect algorithms in SA class
 			public void actionPerformed(ActionEvent e) {
-				// TODO start sorting array, repaint
+				switch(chosenAlg) {
+					case 0:
+						// bubble
+				}
 				
 			}			
 		});
@@ -50,7 +55,7 @@ public class ButtonPanel extends JPanel {
 		shuffle.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				sp.shuffleList(sp.getList()); // SHUFFLE METHOD
+				sp.shuffle(sp.getArray()); // SHUFFLE METHOD
 			}
 			
 		});

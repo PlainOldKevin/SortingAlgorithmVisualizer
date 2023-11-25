@@ -15,14 +15,11 @@ public class SortingPanel extends JPanel {
 
 	// ATTRIBUTES OF CLASS
 	private int len = 50;
-	private int[] list;
-	private ButtonPanel bp;
-	private SortingAlgorithms sort;
+	private int[] array;
 	
 	// GRAPH ATTRIBUTES
 	private final int SIZE = 525;
 	private int width = 17;
-	private int type = 0;
 	
 	
 	// SortingPanel constructor
@@ -32,9 +29,9 @@ public class SortingPanel extends JPanel {
 		this.setBackground(new Color(47,47,47)); // SET BACKGROUND COLOR OF PANEL
 		
 		// SOME CLASS CREATION ATTRIBUTES
-		list = new int[len]; // ARRAY INSTANTIATION
+		array = new int[len]; // ARRAY INSTANTIATION
 		
-		fillList();
+		fillArray();
 		repaint();
 		
 		// ADD TO PANEL
@@ -42,33 +39,33 @@ public class SortingPanel extends JPanel {
 	}
 	
 	// METHOD TO CREATE THE ARRAY USED FOR VISUALIZATION
-	public void fillList() {
+	public void fillArray() {
 		for(int i = 0; i < len; i++) {	// FILLS THE LIST FROM 1 -> LEN
-			list[i] = i + 1;
+			array[i] = i + 1;
 		}
 	}
 	
 	// METHOD TO SHUFFLE LIST; USED ON STARTUP AND WHEN SHUFFLE BUTTON PRESSED
-	public void shuffleList(int[] list) {
+	public void shuffle(int[] array) {
 		for (int i = 0; i < len; i++) { // GO THRU ARRAY
 			Random random = new Random(); // CREATE NEW RANDOM OBJECT FOR METHOD FUNCTIONALITY
 			int randomIndexToSwap = random.nextInt(len); // CHOOSE A RANDOM INDEX TO SWAP WITH
-			int temp = list[randomIndexToSwap]; // ASSIGN THAT INDEX'S VALUE TO A TEMP VARIABLE
-			list[randomIndexToSwap] = list[i]; // ASSIGN THE CURRENT INDEX'S VALUE TO THE TEMP INDEX
-			list[i] = temp; // ASSIGN THE RANDOM INDEX'S VALUE TO THE CURRENT INDEX
+			int temp = array[randomIndexToSwap]; // ASSIGN THAT INDEX'S VALUE TO A TEMP VARIABLE
+			array[randomIndexToSwap] = array[i]; // ASSIGN THE CURRENT INDEX'S VALUE TO THE TEMP INDEX
+			array[i] = temp; // ASSIGN THE RANDOM INDEX'S VALUE TO THE CURRENT INDEX
 		}
 		repaint(); // DISPLAY THE SHUFFLED LIST
 	}
 	
 	// METHOD TO RETURN THE CURRENT LIST; MOSTLY USED IN BUTTON PANEL
-	public int[] getList() {
-		return list;
+	public int[] getArray() {
+		return array;
 	}
 	
 	// METHOD TO CHECK IF THE ARRAY IS SORTED
-	public boolean isSorted(int[] list) {
-        for (int i = 0; i < list.length - 1; i++) { // GO THRU ARRAY
-            if (list[i] > list[i + 1]) { // CHECK INDEX VALUES NEXT TO EACH OTHER
+	public boolean isSorted(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) { // GO THRU ARRAY
+            if (array[i] > array[i + 1]) { // CHECK INDEX VALUES NEXT TO EACH OTHER
                 return false; 
             }
         }
@@ -79,7 +76,7 @@ public class SortingPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for(int i = 0; i < len; i++) {	//RUNS TROUGH EACH ELEMENT OF THE LIST
-			int HEIGHT = list[i]*width/2;	//SETS THE HEIGHT OF THE ELEMENT ON THE GRAPH
+			int HEIGHT = array[i]*width/2;	//SETS THE HEIGHT OF THE ELEMENT ON THE GRAPH
 		
 			// DRAWS THE BAR AND THE BLACK OUTLINE
 			g.setColor(Color.white);	// GRAPH FILL COLOR
