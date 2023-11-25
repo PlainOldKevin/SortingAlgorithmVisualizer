@@ -16,6 +16,7 @@ public class SortingPanel extends JPanel {
 	// ATTRIBUTES OF CLASS
 	private int len = 50;
 	private int[] array;
+	SortingAlgorithms sort;
 	
 	// GRAPH ATTRIBUTES
 	private final int SIZE = 525;
@@ -31,8 +32,9 @@ public class SortingPanel extends JPanel {
 		// SOME CLASS CREATION ATTRIBUTES
 		array = new int[len]; // ARRAY INSTANTIATION
 		
-		fillArray();
-		repaint();
+		
+		fillArray(); // CREATE ARRAY
+		repaint(); // DISPLAY ARRAY
 		
 		// ADD TO PANEL
 		this.setLayout(null); // LAYOUT TO NULL TO PUT THINGS IN CERTAIN SPOTS
@@ -60,6 +62,11 @@ public class SortingPanel extends JPanel {
 	// METHOD TO RETURN THE CURRENT LIST; MOSTLY USED IN BUTTON PANEL
 	public int[] getArray() {
 		return array;
+	}
+	
+	// METHOD FOR PANEL AND ALGORITHMS TO COMMUNICATE
+	public void setSort(SortingAlgorithms sort) {
+		this.sort = sort;
 	}
 	
 	// METHOD TO PAINT AND VISUALIZE THE GRAPH
