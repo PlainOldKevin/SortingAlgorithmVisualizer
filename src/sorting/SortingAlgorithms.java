@@ -35,9 +35,9 @@ public class SortingAlgorithms {
 				sleep();
 				sp.paintImmediately(0, 50, 860, 525);
 			}
-			if (isSorted(array)) swapped = false;
-			reset();	
+			if (isSorted(array)) swapped = false;	
 		}
+		reset();
 	}
 	
 	

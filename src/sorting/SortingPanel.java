@@ -32,7 +32,6 @@ public class SortingPanel extends JPanel {
 		// SOME CLASS CREATION ATTRIBUTES
 		array = new int[len]; // ARRAY INSTANTIATION
 		
-		
 		fillArray(); // CREATE ARRAY
 		repaint(); // DISPLAY ARRAY
 		
@@ -64,17 +63,12 @@ public class SortingPanel extends JPanel {
 		return array;
 	}
 	
-	// METHOD FOR PANEL AND ALGORITHMS TO COMMUNICATE
-	public void setSort(SortingAlgorithms sort) {
-		this.sort = sort;
-	}
-	
 	// METHOD TO PAINT AND VISUALIZE THE GRAPH
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for(int i = 0; i < len; i++) {	//RUNS TROUGH EACH ELEMENT OF THE LIST
 			int HEIGHT = array[i]*width/2;	//SETS THE HEIGHT OF THE ELEMENT ON THE GRAPH
-		
+			
 			// DRAWS THE BAR AND THE BLACK OUTLINE
 			g.setColor(Color.white);	// GRAPH FILL COLOR
 			g.fillRect(i*width, SIZE-HEIGHT, width, HEIGHT);
