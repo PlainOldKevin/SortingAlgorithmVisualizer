@@ -45,8 +45,11 @@ public class ButtonPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				switch(chosenAlg) {
 					case 0:
-						
-						sort.BubbleSort(sp.getArray(), sp);
+						sort.bubbleSort(sp.getArray(), sp);
+						break;
+					case 1:
+						sort.insertionSort(sp.getArray(), sp);
+						break;
 				}
 				
 			}			

@@ -17,7 +17,7 @@ public class SortingAlgorithms {
 	private int doneSort; // VARIBALE TO HOLD 'SORTED UP TO THIS POINT'
 	
 	// BUBBLE SORT ALGORITHM
-	public void BubbleSort(int[] array, SortingPanel sp) {
+	public void bubbleSort(int[] array, SortingPanel sp) {
 		int alreadySorted = 1; // VARIABLE TO HELP TRACK DoneSort
 		boolean swapped = true;
 		while (swapped) {
@@ -40,6 +40,26 @@ public class SortingAlgorithms {
 		reset();
 		sp.repaint();
 	}
+	
+	// INSERTION SORT ALGORITHM
+	public void insertionSort(int[] array, SortingPanel sp) {
+        for (int i = 1; i < array.length; i++) {
+        	doneSort = i;
+        	check = i;
+        	while(array[check] < array[check-1]) {
+        		int temp = array[check];
+        		array[check] = array[check-1];
+        		array[check-1] = temp;
+        		sp.paintImmediately(0, 50, 860, 525);
+				sleep();
+				if(check > 1) {
+					check--;
+				}
+        	}
+        }
+        reset();
+        sp.repaint();
+    }
 	
 	
 	// METHOD TO GET FINISHED SORTING INDEX IN CERTAIN SORT ALGORITHMS
@@ -83,7 +103,7 @@ public class SortingAlgorithms {
 	// METHOD INSERTED INTO SORTING ALGORITHMS TO DELAY THE SORTING, THUS HIGHLIGHTING THE SORTING PROCESS FOR THE USER
 	public void sleep() {
 		try {
-			Thread.sleep(15);
+			Thread.sleep(30);
 		} catch(Exception e) {
 			
 		}
