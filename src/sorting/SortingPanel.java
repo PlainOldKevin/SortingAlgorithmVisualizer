@@ -83,20 +83,23 @@ public class SortingPanel extends JPanel {
 			g.setColor(Color.white);	// GRAPH FILL COLOR
 			
 			if(sort == null) {
-		          throw new RuntimeException("Board not set") ;
+		          throw new RuntimeException("Sort not set") ;
 		       }
 			
 			if(sort.getCurrent() > -1 && i == sort.getCurrent()) {
-				g.setColor(Color.green);	//COLOR OF CURRENT
-				System.out.println(sort.getCurrent());
+				g.setColor(Color.magenta);	//COLOR OF CURRENT
 			}
 			if(sort.getCheck() > -1 && i == sort.getCheck()) {
 				g.setColor(Color.red);	//COLOR OF CHECKING
 			}
-			
+			if(sort.getDoneSort() > 1 && i == sort.getDoneSort()) {
+				g.setColor(Color.green);	//COLOR OF DONE SORT
+			}
 			g.fillRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL RECTANGLES
 			g.setColor(Color.black);	// GRAPH OUTLINE COLOR
 			g.drawRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL OUTLINE
+			
+			
 		}
 	}
 }
