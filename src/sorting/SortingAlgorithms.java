@@ -129,6 +129,7 @@ public class SortingAlgorithms {
             sp.paintImmediately(0, 50, 860, 525);
 			sleep();
         }
+        sp.paintImmediately(0, 50, 860, 525);
         reset();
         sp.paintImmediately(0, 50, 860, 525);
 	}

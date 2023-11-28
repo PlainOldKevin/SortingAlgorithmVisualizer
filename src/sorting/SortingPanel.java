@@ -16,6 +16,8 @@ public class SortingPanel extends JPanel {
 	// ATTRIBUTES OF CLASS
 	private int len = 50;
 	private int[] array;
+	JLabel title = new JLabel("Sorting Algorithm Visualizer");
+	JLabel author = new JLabel("By Kevin Conway");
 	
 	// GRAPH ATTRIBUTES
 	private final int SIZE = 525;
@@ -32,11 +34,24 @@ public class SortingPanel extends JPanel {
 		// SOME CLASS CREATION ATTRIBUTES
 		array = new int[len]; // ARRAY INSTANTIATION
 		
+		JLabel title = new JLabel("Sorting Algorithm Visualizer"); // TITLE
+		title.setHorizontalAlignment(JLabel.CENTER);
+		title.setBounds(240, 0, 400, 50);
+		title.setForeground(Color.white);
+		title.setFont(new Font("Serif", Font.PLAIN, 28));
+		
+		JLabel author = new JLabel("By Kevin Conway"); // AUTHOR 
+		author.setHorizontalAlignment(JLabel.CENTER);
+		author.setBounds(240, 40, 400, 50);
+		author.setForeground(Color.white);
+		author.setFont(new Font("Serif", Font.PLAIN, 20));
 		
 		fillArray(); // CREATE ARRAY
 		repaint(); // DISPLAY ARRAY
 		
 		// ADD TO PANEL
+		this.add(title);
+		this.add(author);
 		this.setLayout(null); // LAYOUT TO NULL TO PUT THINGS IN CERTAIN SPOTS
 	}
 	
