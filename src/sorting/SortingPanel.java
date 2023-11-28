@@ -87,13 +87,10 @@ public class SortingPanel extends JPanel {
 		       }
 			
 			if(sort.getCurrent() > -1 && i == sort.getCurrent()) {
-				g.setColor(Color.magenta);	//COLOR OF CURRENT
+				g.setColor(Color.green);	//COLOR OF CURRENT
 			}
 			if(sort.getCheck() > -1 && i == sort.getCheck()) {
 				g.setColor(Color.red);	//COLOR OF CHECKING
-			}
-			if(sort.getDoneSort() > 1 && i == sort.getDoneSort()) {
-				g.setColor(Color.green);	//COLOR OF DONE SORT
 			}
 			g.fillRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL RECTANGLES
 			g.setColor(Color.black);	// GRAPH OUTLINE COLOR

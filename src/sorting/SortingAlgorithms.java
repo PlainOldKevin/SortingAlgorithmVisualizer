@@ -33,7 +33,7 @@ public class SortingAlgorithms {
 				sleep();
 				swapped = true;
 			}
-			doneSort = len - alreadySorted;
+			current = len - alreadySorted;
 			alreadySorted++;
 			if (isSorted(array)) swapped = false;	
 		}
@@ -44,7 +44,7 @@ public class SortingAlgorithms {
 	// INSERTION SORT ALGORITHM
 	public void insertionSort(int[] array, SortingPanel sp) {
         for (int i = 1; i < array.length; i++) {
-        	doneSort = i;
+        	current = i;
         	check = i;
         	while(array[check] < array[check-1]) {
         		int temp = array[check];
@@ -60,6 +60,23 @@ public class SortingAlgorithms {
         reset();
         sp.repaint();
     }
+	
+	// MERGE SORT ALGORITHM
+	public void mergeSort(int l, int r) {
+		if (l < r) {
+			int m = (l+r)/2;
+			current = r;
+			mergeSort(l, m);
+			mergeSort(m+1, r);
+			
+			//merge(l, m, )
+		}
+	}
+	
+	// MERGE ALGORITHM USED IN MERGE SORT
+	public void merge(int l, int m, int r, int[] array, SortingPanel sp) {
+		
+	}
 	
 	
 	// METHOD TO GET FINISHED SORTING INDEX IN CERTAIN SORT ALGORITHMS
