@@ -65,13 +65,11 @@ public class SortingAlgorithms {
 	public void mergeSort(int l, int r, int[] array, SortingPanel sp) {
 		if (l < r) {
 			int m = (l+r)/2;
-			current = r;
+			check = r;
 			mergeSort(l, m, array, sp);
 			mergeSort(m+1, r, array, sp);
 			
 			merge(l, m, r, array, sp);
-			sp.paintImmediately(0, 50, 860, 525);
-			sleep();
 		}
 	}
 	
@@ -97,20 +95,20 @@ public class SortingAlgorithms {
         int i = 0;
         int j = 0;
         
-     // Initial index of merged subarray array
+        // Initial index of merged subarray array
         int k = l;
         while (i < n1 && j < n2) {
+        	current = k+1;
             if (L[i] <= R[j]) {
                 array[k] = L[i];
                 i++;
-                sp.paintImmediately(0, 50, 860, 525);
             }
             else {
                 array[k] = R[j];
                 j++;
-                sp.paintImmediately(0, 50, 860, 525);
             }
             k++;
+            sp.paintImmediately(0, 50, 860, 525);
             sleep();
         }
  
@@ -131,6 +129,8 @@ public class SortingAlgorithms {
             sp.paintImmediately(0, 50, 860, 525);
 			sleep();
         }
+        reset();
+        sp.paintImmediately(0, 50, 860, 525);
 	}
 	
 	
