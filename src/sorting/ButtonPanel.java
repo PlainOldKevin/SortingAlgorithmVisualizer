@@ -41,7 +41,6 @@ public class ButtonPanel extends JPanel {
 		// START BUTTON ACTION LISTENER
 		start.addActionListener(new ActionListener() {
 			@Override
-			// TODO create and perfect algorithms in SA class
 			public void actionPerformed(ActionEvent e) {
 				switch(chosenAlg) {
 					case 0:
@@ -49,6 +48,9 @@ public class ButtonPanel extends JPanel {
 						break;
 					case 1:
 						sort.insertionSort(sp.getArray(), sp);
+						break;
+					case 3:
+						sort.mergeSort(0, sp.getArray().length - 1, sp.getArray(), sp);
 						break;
 				}
 				

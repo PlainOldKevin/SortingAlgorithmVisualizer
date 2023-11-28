@@ -62,20 +62,75 @@ public class SortingAlgorithms {
     }
 	
 	// MERGE SORT ALGORITHM
-	public void mergeSort(int l, int r) {
+	public void mergeSort(int l, int r, int[] array, SortingPanel sp) {
 		if (l < r) {
 			int m = (l+r)/2;
 			current = r;
-			mergeSort(l, m);
-			mergeSort(m+1, r);
+			mergeSort(l, m, array, sp);
+			mergeSort(m+1, r, array, sp);
 			
-			//merge(l, m, )
+			merge(l, m, r, array, sp);
+			sp.paintImmediately(0, 50, 860, 525);
+			sleep();
 		}
 	}
 	
 	// MERGE ALGORITHM USED IN MERGE SORT
 	public void merge(int l, int m, int r, int[] array, SortingPanel sp) {
+		// TWO SUBARRAY SIZES
+		int n1 = m - l + 1;
+		int n2 = r-m;
 		
+		// TEMP ARRAYS
+		int[] L = new int[n1];
+		int[] R = new int[n2];
+		
+		// COPY DATA TO TEMP ARRAYS
+        for (int i = 0; i < n1; ++i)
+            L[i] = array[l + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = array[m + 1 + j];
+        
+        // MERGE ARRAYS NEXT
+        
+        // START OF BOTH SUBARRAYS
+        int i = 0;
+        int j = 0;
+        
+     // Initial index of merged subarray array
+        int k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                array[k] = L[i];
+                i++;
+                sp.paintImmediately(0, 50, 860, 525);
+            }
+            else {
+                array[k] = R[j];
+                j++;
+                sp.paintImmediately(0, 50, 860, 525);
+            }
+            k++;
+            sleep();
+        }
+ 
+        // Copy remaining elements of L[] if any
+        while (i < n1) {
+            array[k] = L[i];
+            i++;
+            k++;
+            sp.paintImmediately(0, 50, 860, 525);
+			sleep();
+        }
+ 
+        // Copy remaining elements of R[] if any
+        while (j < n2) {
+            array[k] = R[j];
+            j++;
+            k++;
+            sp.paintImmediately(0, 50, 860, 525);
+			sleep();
+        }
 	}
 	
 	
