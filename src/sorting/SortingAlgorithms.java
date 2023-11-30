@@ -66,6 +66,7 @@ public class SortingAlgorithms {
 	public void mergeSort(int l, int r, int[] array, SortingPanel sp) {
 		if (l < r) {
 			int m = (l+r)/2;
+			current = r;
 			mergeSort(l, m, array, sp);
 			mergeSort(m+1, r, array, sp);
 			
@@ -99,7 +100,7 @@ public class SortingAlgorithms {
         
         // COPY CORRECT ELEMENTS INTO SUBARRAYS
         while (i < n1 && j < n2) {
-        	current = k+1;
+        	check = k+1;
             if (L[i] <= R[j]) {
                 array[k] = L[i];
                 i++;
@@ -134,12 +135,6 @@ public class SortingAlgorithms {
         reset();
         sp.paintImmediately(0, 50, 860, 525);
 	}
-	
-	
-	// METHOD TO GET FINISHED SORTING INDEX IN CERTAIN SORT ALGORITHMS
-	public int getDoneSort() {
-		return doneSort;
-	}
 
 
 	// METHOD TO SET FINISHED SORTING INDEX IN CERTAIN SORT ALGORITHMS
@@ -169,7 +164,7 @@ public class SortingAlgorithms {
 		return check;
 	}
 	
-	// CHECK1 GETTER
+	// CHONK1 GETTER
 	public int getChonk() {
 		return chonk;
 	}
