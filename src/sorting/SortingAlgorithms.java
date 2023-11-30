@@ -13,6 +13,7 @@ public class SortingAlgorithms {
 	// ATTRIBUTES FOR ARRAY COMPARISON
 	private int current = -1;
 	private int check = -1;
+	private int chonk = -1;
 	private int len = 50;
 	private int doneSort; // VARIBALE TO HOLD 'SORTED UP TO THIS POINT'
 	
@@ -65,7 +66,6 @@ public class SortingAlgorithms {
 	public void mergeSort(int l, int r, int[] array, SortingPanel sp) {
 		if (l < r) {
 			int m = (l+r)/2;
-			check = r;
 			mergeSort(l, m, array, sp);
 			mergeSort(m+1, r, array, sp);
 			
@@ -94,9 +94,10 @@ public class SortingAlgorithms {
         // START OF BOTH SUBARRAYS
         int i = 0;
         int j = 0;
-        
-        // Initial index of merged subarray array
+        // FIRST INDEX OF MERGED SUBARRAY
         int k = l;
+        
+        // COPY CORRECT ELEMENTS INTO SUBARRAYS
         while (i < n1 && j < n2) {
         	current = k+1;
             if (L[i] <= R[j]) {
@@ -112,7 +113,7 @@ public class SortingAlgorithms {
             sleep();
         }
  
-        // Copy remaining elements of L[] if any
+        // COPY THE REST OF THE ELEMENTS INTO LEFT ARRAY
         while (i < n1) {
             array[k] = L[i];
             i++;
@@ -121,7 +122,7 @@ public class SortingAlgorithms {
 			sleep();
         }
  
-        // Copy remaining elements of R[] if any
+        // COPY THE REST OF THE ELEMENTS INTO RIGHT ARRAY
         while (j < n2) {
             array[k] = R[j];
             j++;
@@ -160,12 +161,17 @@ public class SortingAlgorithms {
 	public void reset() {
 		current = -1;
 		check = -1;
-		doneSort = 0;
+		chonk = -1;
 	}
 	
 	// CHECK GETTER
 	public int getCheck() {
 		return check;
+	}
+	
+	// CHECK1 GETTER
+	public int getChonk() {
+		return chonk;
 	}
 	
 	// CURRENT GETTER

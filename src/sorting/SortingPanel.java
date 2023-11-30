@@ -107,6 +107,9 @@ public class SortingPanel extends JPanel {
 			if(sort.getCheck() > -1 && i == sort.getCheck()) {
 				g.setColor(Color.red);	//COLOR OF CHECKING
 			}
+			if(sort.getChonk() > -1 && i == sort.getChonk()) {
+				g.setColor(Color.magenta);	//COLOR OF CHECKING
+			}
 			g.fillRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL RECTANGLES
 			g.setColor(Color.black);	// GRAPH OUTLINE COLOR
 			g.drawRect(i*width, SIZE-HEIGHT, width, HEIGHT); // FILL OUTLINE
