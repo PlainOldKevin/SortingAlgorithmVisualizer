@@ -136,12 +136,6 @@ public class SortingAlgorithms {
         sp.paintImmediately(0, 50, 860, 525);
 	}
 
-
-	// METHOD TO SET FINISHED SORTING INDEX IN CERTAIN SORT ALGORITHMS
-	public void setDoneSort(int doneSort) {
-		this.doneSort = doneSort;
-	}
-
 	// METHOD TO CHECK IF THE ARRAY IS SORTED
 	public boolean isSorted(int[] array) {
 	    for (int i = 0; i < array.length - 1; i++) { // GO THRU ARRAY
