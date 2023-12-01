@@ -49,6 +49,9 @@ public class ButtonPanel extends JPanel {
 					case 1:
 						sort.insertionSort(sp.getArray(), sp);
 						break;
+					case 2:
+						sort.selectionSort(sp.getArray(), sp);
+						break;
 					case 3:
 						sort.mergeSort(0, sp.getArray().length - 1, sp.getArray(), sp);
 						break;

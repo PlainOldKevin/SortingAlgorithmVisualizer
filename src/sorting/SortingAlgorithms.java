@@ -15,7 +15,7 @@ public class SortingAlgorithms {
 	private int check = -1;
 	private int chonk = -1;
 	private int len = 50;
-	private int doneSort; // VARIBALE TO HOLD 'SORTED UP TO THIS POINT'
+	private int compare;
 	
 	// BUBBLE SORT ALGORITHM
 	public void bubbleSort(int[] array, SortingPanel sp) {
@@ -62,11 +62,37 @@ public class SortingAlgorithms {
         sp.repaint();
     }
 	
+	// SELECTION SORT ALGORITHM
+	public void selectionSort(int[] array, SortingPanel sp) {
+		int n = array.length;
+		 
+        // ITERATE THRU ARRAY TO GRADUALLY SORT AND SHORTEN THE UNSORTED SUBARRAY PORTION
+        for (int i = 0; i < n-1; i++) {
+            // FIND MIN ELEMENT
+            int min_idx = i;
+            current = i;
+            for (int j = i+1; j < n; j++) {
+            	check = j;
+                if (array[j] < array[min_idx]) {
+                	min_idx = j;
+                }
+                sp.paintImmediately(0, 50, 860, 525);
+                sleep();
+            }
+            // SWAP MINIMUM INDEX ELEMENT WITH MINIMUM ELEMENT 
+            int temp = array[min_idx];
+            array[min_idx] = array[i];
+            array[i] = temp;
+        }
+        sp.paintImmediately(0, 50, 860, 525);
+        reset();
+        sp.paintImmediately(0, 50, 860, 525);
+	}
+	
 	// MERGE SORT ALGORITHM
 	public void mergeSort(int l, int r, int[] array, SortingPanel sp) {
 		if (l < r) {
 			int m = (l+r)/2;
-			current = r;
 			mergeSort(l, m, array, sp);
 			mergeSort(m+1, r, array, sp);
 			
@@ -100,7 +126,7 @@ public class SortingAlgorithms {
         
         // COPY CORRECT ELEMENTS INTO SUBARRAYS
         while (i < n1 && j < n2) {
-        	check = k+1;
+        	current = k+1;
             if (L[i] <= R[j]) {
                 array[k] = L[i];
                 i++;
@@ -166,6 +192,11 @@ public class SortingAlgorithms {
 	// CURRENT GETTER
 	public int getCurrent() {
 		return current;
+	}
+	
+	// CURRENT GETTER
+	public int getCompare() {
+		return compare;
 	}
 	
 	// METHOD INSERTED INTO SORTING ALGORITHMS TO DELAY THE SORTING, THUS HIGHLIGHTING THE SORTING PROCESS FOR THE USER
